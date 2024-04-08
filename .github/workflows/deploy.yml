@@ -20,6 +20,7 @@ jobs:
         with:
           repository: hiperwalk/hiperwalk
           path: hiperwalk
+          ref: 2.0b
 
       - name: Setup Python
         uses: actions/setup-python@v4
