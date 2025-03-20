@@ -16,10 +16,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout hiperwalk
+        uses: actions/checkout@v4
+        with:
+          repository: hiperwalk/hiperwalk
+          path: hiperwalk
+          ref: 2.0b
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Copy the hiperwalk examples to the content directory
+        run: |
+          cp -r hiperwalk/examples content
 
       - name: Install mamba
         uses: mamba-org/setup-micromamba@v2
