@@ -16,15 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Checkout hiperwalk
-        uses: actions/checkout@v3
-        with:
-          repository: hiperwalk/hiperwalk
-          path: hiperwalk
-          ref: 2.0b
-
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
@@ -33,9 +26,9 @@ jobs:
           cp -r hiperwalk/examples content
 
       - name: Install mamba
-        uses: mamba-org/setup-micromamba@v1
+        uses: mamba-org/setup-micromamba@v2
         with:
-          micromamba-version: '1.5.0-0'
+          micromamba-version: '2.0.5-0'
           environment-file: build-environment.yml
           cache-environment: true
 
