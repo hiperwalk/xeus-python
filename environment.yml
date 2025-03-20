@@ -10,5 +10,4 @@ dependencies:
   - matplotlib
   - scipy
   - ipywidgets
-  - pip:
-    - ./hiperwalk
+  - hiperwalk
